@@ -1,5 +1,5 @@
 # Spezia2
-泛用爬虫项目
+泛用爬虫项目(Project CoTec are required!)
     
  ## Prerequirement
  ### Database
