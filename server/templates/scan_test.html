@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scan Test</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/roll.js')}}"></script>
+	<script src="{{url_for('static', filename='js/index.js')}}"></script>
+
+    <script src="{{url_for('static', filename='js/scan_test.js')}}"></script>
+</head>
+<body>
+    <div class="contentPanel">
+		<div class="testArea">
+			<div class="caption">测试面板</div>
+			<form action="{{ url_for('scanTest')}}" id="testform" name="testform" method="post">
+				<input id="content_url" name="content_url" required="required"
+					autofocus="autofocus" placeholder="输入正文页面链接" class="user-name"
+					type="text">
+                <input id="content_ruler" name="content_ruler"
+					required="required" placeholder="输入正文提取规则" class="pass-word"
+					type="text" autocomplete="off">
+
+				{% if error %}
+					<div class="error-mess">
+						<span class="error-icon"></span><span id="error-message">{{ error }}</span>
+					</div>
+				{% endif %}
+
+				<!--<input class="logging" type="submit" value="测试" />-->
+                <input type="button" onclick="formSubmit()" value="测试">
+                <p><input class="logging" type="button" id="calculate" value="calculate"></p>
+				<div class="line"></div>
+                <div id="display">
+                    <p>测试结果</p>
+                </div>
+
+			</form>
+		</div>
+		<div class="area1">
+			<table class="test_tb">
+				<tr>
+					<td><label> String here! </label></td>
+					<td><input type="text" id="put" /></td>
+				</tr>
+				<tr>
+
+				</tr>
+			</table>
+
+			<h2>Hello finally meet you!</h2>
+		</div>
+	</div>
+
+	<div class="displayPanel">
+		<div class="timer">
+			<div>Project Global Hawk</div>
+		</div>
+	</div>
+	<div id="header" class="headline">
+		<div class="ipPanel">
+			<div>全球鹰计划</div>
+		</div>
+	</div>
+
+</body>
+</html>

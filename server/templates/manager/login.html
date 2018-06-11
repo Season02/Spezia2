@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Global Hawk</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/index.css') }}">
+	<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/roll.js')}}"></script>
+	<script src="{{url_for('static', filename='js/index.js')}}"></script>
+</head>
+<body>
+    <div class="contentPanel">
+		<div class="login">
+			<div class="caption">帐号登陆</div>
+			<form action="{{ url_for('login')}}" name="loginform" method="post">
+				<input id="username" name="username" required="what?"
+					autofocus="autofocus" placeholder="请输入帐号" class="user-name"
+					type="text"> <input id="password" name="password"
+					required="required" placeholder="请输入密码" class="pass-word"
+					type="password" autocomplete="off">
+				<!--<c:if test="${not empty message}">-->
+					<!--<div class="error-mess">-->
+						<!--<span class="error-icon"></span><span id="error-message">${message}</span>-->
+					<!--</div>-->
+				<!--</c:if>-->
+				{% if error %}
+					<div class="error-mess">
+						<span class="error-icon"></span><span id="error-message">{{ error }}</span>
+					</div>
+				{% endif %}
+
+				<input class="logging" type="submit" value="登录" />
+				<div class="line"></div>
+				<!--<div class="register">-->
+					<!--<span class="hit">需要一个帐号?</span> <a href="<%=basePath%>pages/manager/register.jsp">立即注册</a>-->
+				<!--</div>-->
+			</form>
+		</div>
+		<div class="area1">
+			<table class="test_tb">
+				<tr>
+					<td><label> String here! </label></td>
+					<td><input type="text" id="put" /></td>
+				</tr>
+				<tr>
+					<!--<td colspan="2">-->
+						<!--<button onClick="javascript:window.location='JSTLTest'">jstl</button>-->
+						<!--<button onclick="getElementById('demo').innerHTML=Date()">The-->
+							<!--time is?</button>-->
+					<!--</td>-->
+				</tr>
+			</table>
+			<!--<input value="servlet" type="button"-->
+				<!--onClick="javascript:window.location='HelloServlet?user=Season02'" />-->
+			<h2>Hello finally meet you!</h2>
+		</div>
+	</div>
+
+	<div class="displayPanel">
+		<div class="timer">
+			<!--<% java.util.Date d = new java.util.Date(); %>-->
+			<!--Today`s date is-->
+			<!--<%= d.toString() %>-->
+		</div>
+	</div>
+	<div id="header" class="headline">
+		<div class="ipPanel">
+			<div>全球鹰计划</div>
+			<!--<%=basePath.toString() %>-->
+			<!--${pageContext.request.contextPath}-->
+		</div>
+	</div>
+</body>
+</html>
